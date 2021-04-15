@@ -1,0 +1,45 @@
+# Logfile created on 2021-04-15 14:52:20 +0100 by logger.rb/66358
+  INFO ---------------------------------------------------------------------------
+  INFO START 2021-04-15 14:52:20 +0100 cap production deploy:check
+  INFO ---------------------------------------------------------------------------
+  INFO [b8a7398e] Running /usr/bin/env mkdir -p /tmp as root@178.62.89.200
+ DEBUG [b8a7398e] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2021-04-15 14:57:15 +0100 cap production git:check
+  INFO ---------------------------------------------------------------------------
+  INFO [f97dc080] Running /usr/bin/env mkdir -p /tmp as root@178.62.89.200
+ DEBUG [f97dc080] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2021-04-15 14:59:50 +0100 cap production git:check
+  INFO ---------------------------------------------------------------------------
+  INFO [11230e74] Running /usr/bin/env mkdir -p /tmp as root@178.62.89.200
+ DEBUG [11230e74] Command: /usr/bin/env mkdir -p /tmp
+  INFO [11230e74] Finished in 0.844 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-c088d8eaf9ef7d7f606f.sh 0.0%
+  INFO Uploading /tmp/git-ssh-c088d8eaf9ef7d7f606f.sh 100.0%
+  INFO [670f7381] Running /usr/bin/env chmod 700 /tmp/git-ssh-c088d8eaf9ef7d7f606f.sh as root@178.62.89.200
+ DEBUG [670f7381] Command: /usr/bin/env chmod 700 /tmp/git-ssh-c088d8eaf9ef7d7f606f.sh
+  INFO [670f7381] Finished in 0.032 seconds with exit status 0 (successful).
+  INFO [f64856f0] Running /usr/bin/env git ls-remote git@github.com:GMalzac/cap-sinatra.git HEAD as root@178.62.89.200
+ DEBUG [f64856f0] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-c088d8eaf9ef7d7f606f.sh" ; /usr/bin/env git ls-remote git@github.com:GMalzac/cap-sinatra.git HEAD )
+ DEBUG [f64856f0] 	Warning: Permanently added 'github.com,140.82.121.4' (RSA) to the list of known hosts.
+ DEBUG [f64856f0] 	53e9b2fa995367601a4dc22c4de2f68778f1b06d	HEAD
+  INFO [f64856f0] Finished in 1.327 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2021-04-15 15:00:33 +0100 cap production deploy:check
+  INFO ---------------------------------------------------------------------------
+  INFO [2a59ff00] Running /usr/bin/env mkdir -p /tmp as root@178.62.89.200
+ DEBUG [2a59ff00] Command: /usr/bin/env mkdir -p /tmp
+  INFO [2a59ff00] Finished in 0.906 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-b137552752fb9dbe4fdc.sh 0.0%
+  INFO Uploading /tmp/git-ssh-b137552752fb9dbe4fdc.sh 100.0%
+  INFO [c04c3b31] Running /usr/bin/env chmod 700 /tmp/git-ssh-b137552752fb9dbe4fdc.sh as root@178.62.89.200
+ DEBUG [c04c3b31] Command: /usr/bin/env chmod 700 /tmp/git-ssh-b137552752fb9dbe4fdc.sh
+  INFO [c04c3b31] Finished in 0.030 seconds with exit status 0 (successful).
+  INFO [ac61df16] Running /usr/bin/env git ls-remote git@github.com:GMalzac/cap-sinatra.git HEAD as root@178.62.89.200
+ DEBUG [ac61df16] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-b137552752fb9dbe4fdc.sh" ; /usr/bin/env git ls-remote git@github.com:GMalzac/cap-sinatra.git HEAD )
+ DEBUG [ac61df16] 	53e9b2fa995367601a4dc22c4de2f68778f1b06d	HEAD
+  INFO [ac61df16] Finished in 1.352 seconds with exit status 0 (successful).
+  INFO [f418cf7b] Running /usr/bin/env mkdir -p /var/www/cap-sinatra/shared /var/www/cap-sinatra/releases as root@178.62.89.200
+ DEBUG [f418cf7b] Command: /usr/bin/env mkdir -p /var/www/cap-sinatra/shared /var/www/cap-sinatra/releases
+  INFO [f418cf7b] Finished in 0.032 seconds with exit status 0 (successful).
