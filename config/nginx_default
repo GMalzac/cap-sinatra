@@ -40,12 +40,14 @@ server {
 
   root /var/www/cap-sinatra/current/public;
   passenger_enabled on;
-  passenger_ruby /opt/rubies/ruby-2.6.5/bin/ruby;
+  passenger_ruby /opt/rubies/ruby-2.6.6/bin/ruby;
 
   # Add index.php to the list if you are using PHP
   index index.html index.htm index.nginx-debian.html;
 
   server_name _;
+
+  location / { }
 
   # pass PHP scripts to FastCGI server
   #
