@@ -459,3 +459,780 @@
   INFO [a6f78ad8] Running /usr/local/bin/chruby-exec ruby-2.6.6 -- bundle config --local deployment true as root@178.62.89.200
  DEBUG [a6f78ad8] Command: cd /var/www/cap-sinatra/releases/20210416133040 && /usr/local/bin/chruby-exec ruby-2.6.6 -- bundle config --local deployment true
  DEBUG [a6f78ad8] 	/bin/bash: chruby: command not found
+  INFO ---------------------------------------------------------------------------
+  INFO START 2021-04-16 14:33:12 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [a09ccdca] Running /usr/bin/env which passenger as root@178.62.89.200
+ DEBUG [a09ccdca] Command: /usr/bin/env which passenger
+ DEBUG [a09ccdca] Finished in 1.881 seconds with exit status 1 (failed).
+  INFO [04d7917c] Running /usr/bin/env mkdir -p /tmp as root@178.62.89.200
+ DEBUG [04d7917c] Command: /usr/bin/env mkdir -p /tmp
+  INFO [04d7917c] Finished in 0.049 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-807ab71e925364313987.sh 0.0%
+  INFO Uploading /tmp/git-ssh-807ab71e925364313987.sh 100.0%
+  INFO [f2f51798] Running /usr/bin/env chmod 700 /tmp/git-ssh-807ab71e925364313987.sh as root@178.62.89.200
+ DEBUG [f2f51798] Command: /usr/bin/env chmod 700 /tmp/git-ssh-807ab71e925364313987.sh
+  INFO [f2f51798] Finished in 0.033 seconds with exit status 0 (successful).
+  INFO [cb65d2a8] Running /usr/bin/env git ls-remote git@github.com:GMalzac/cap-sinatra.git HEAD as root@178.62.89.200
+ DEBUG [cb65d2a8] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-807ab71e925364313987.sh" ; /usr/bin/env git ls-remote git@github.com:GMalzac/cap-sinatra.git HEAD )
+ DEBUG [cb65d2a8] 	fa315da73e01496b6c60827202d9733cc4422e3c	HEAD
+  INFO [cb65d2a8] Finished in 1.441 seconds with exit status 0 (successful).
+  INFO [8d8d57ae] Running /usr/bin/env mkdir -p /var/www/cap-sinatra/shared /var/www/cap-sinatra/releases as root@178.62.89.200
+ DEBUG [8d8d57ae] Command: /usr/bin/env mkdir -p /var/www/cap-sinatra/shared /var/www/cap-sinatra/releases
+  INFO [8d8d57ae] Finished in 0.037 seconds with exit status 0 (successful).
+ DEBUG [cb5b3e60] Running [ -f /var/www/cap-sinatra/current/REVISION ] as root@178.62.89.200
+ DEBUG [cb5b3e60] Command: [ -f /var/www/cap-sinatra/current/REVISION ]
+ DEBUG [cb5b3e60] Finished in 0.077 seconds with exit status 0 (successful).
+ DEBUG [053b858e] Running /usr/bin/env cat /var/www/cap-sinatra/current/REVISION 2>/dev/null as root@178.62.89.200
+ DEBUG [053b858e] Command: /usr/bin/env cat /var/www/cap-sinatra/current/REVISION 2>/dev/null
+ DEBUG [053b858e] 	53e9b2fa995367601a4dc22c4de2f68778f1b06d
+ DEBUG [053b858e] Finished in 0.031 seconds with exit status 0 (successful).
+ DEBUG [f69a50cb] Running [ -f /var/www/cap-sinatra/repo/HEAD ] as root@178.62.89.200
+ DEBUG [f69a50cb] Command: [ -f /var/www/cap-sinatra/repo/HEAD ]
+ DEBUG [f69a50cb] Finished in 0.072 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/cap-sinatra/repo
+ DEBUG [3cec2b31] Running if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [3cec2b31] Command: if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi
+ DEBUG [3cec2b31] Finished in 0.060 seconds with exit status 0 (successful).
+  INFO [c22dd47d] Running /usr/bin/env git remote set-url origin git@github.com:GMalzac/cap-sinatra.git as root@178.62.89.200
+ DEBUG [c22dd47d] Command: cd /var/www/cap-sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-807ab71e925364313987.sh" ; /usr/bin/env git remote set-url origin git@github.com:GMalzac/cap-sinatra.git )
+  INFO [c22dd47d] Finished in 0.079 seconds with exit status 0 (successful).
+  INFO [09646970] Running /usr/bin/env git remote update --prune as root@178.62.89.200
+ DEBUG [09646970] Command: cd /var/www/cap-sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-807ab71e925364313987.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [09646970] 	Fetching origin
+ DEBUG [09646970] 	From github.com:GMalzac/cap-sinatra
+   575401f..fa315da  master     -> master
+  INFO [09646970] Finished in 1.357 seconds with exit status 0 (successful).
+ DEBUG [db3004cd] Running if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [db3004cd] Command: if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi
+ DEBUG [db3004cd] Finished in 0.031 seconds with exit status 0 (successful).
+  INFO [9d4cff21] Running /usr/bin/env mkdir -p /var/www/cap-sinatra/releases/20210416133316 as root@178.62.89.200
+ DEBUG [9d4cff21] Command: cd /var/www/cap-sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-807ab71e925364313987.sh" ; /usr/bin/env mkdir -p /var/www/cap-sinatra/releases/20210416133316 )
+  INFO [9d4cff21] Finished in 0.076 seconds with exit status 0 (successful).
+  INFO [a179ff6a] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/cap-sinatra/releases/20210416133316 as root@178.62.89.200
+ DEBUG [a179ff6a] Command: cd /var/www/cap-sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-807ab71e925364313987.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/cap-sinatra/releases/20210416133316 )
+  INFO [a179ff6a] Finished in 0.038 seconds with exit status 0 (successful).
+ DEBUG [4bc26504] Running if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [4bc26504] Command: if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi
+ DEBUG [4bc26504] Finished in 0.069 seconds with exit status 0 (successful).
+ DEBUG [18f22ca4] Running /usr/bin/env git rev-list --max-count=1 master as root@178.62.89.200
+ DEBUG [18f22ca4] Command: cd /var/www/cap-sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-807ab71e925364313987.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [18f22ca4] 	fa315da73e01496b6c60827202d9733cc4422e3c
+ DEBUG [18f22ca4] Finished in 0.034 seconds with exit status 0 (successful).
+ DEBUG [7eda1dbf] Running if test ! -d /var/www/cap-sinatra/releases/20210416133316; then echo "Directory does not exist '/var/www/cap-sinatra/releases/20210416133316'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [7eda1dbf] Command: if test ! -d /var/www/cap-sinatra/releases/20210416133316; then echo "Directory does not exist '/var/www/cap-sinatra/releases/20210416133316'" 1>&2; false; fi
+ DEBUG [7eda1dbf] Finished in 0.073 seconds with exit status 0 (successful).
+  INFO [d90e6524] Running /usr/bin/env echo "fa315da73e01496b6c60827202d9733cc4422e3c" > REVISION as root@178.62.89.200
+ DEBUG [d90e6524] Command: cd /var/www/cap-sinatra/releases/20210416133316 && /usr/bin/env echo "fa315da73e01496b6c60827202d9733cc4422e3c" > REVISION
+  INFO [d90e6524] Finished in 0.046 seconds with exit status 0 (successful).
+ DEBUG [18a78884] Running if test ! -d /var/www/cap-sinatra/releases/20210416133316; then echo "Directory does not exist '/var/www/cap-sinatra/releases/20210416133316'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [18a78884] Command: if test ! -d /var/www/cap-sinatra/releases/20210416133316; then echo "Directory does not exist '/var/www/cap-sinatra/releases/20210416133316'" 1>&2; false; fi
+ DEBUG [18a78884] Finished in 0.074 seconds with exit status 0 (successful).
+  INFO [d304c309] Running /usr/local/bin/chruby-exec ruby-2.6.6 -- bundle config --local deployment true as root@178.62.89.200
+ DEBUG [d304c309] Command: cd /var/www/cap-sinatra/releases/20210416133316 && /usr/local/bin/chruby-exec ruby-2.6.6 -- bundle config --local deployment true
+ DEBUG [d304c309] 	/bin/bash: chruby: command not found
+  INFO ---------------------------------------------------------------------------
+  INFO START 2021-04-16 14:38:28 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ ERROR chruby: chruby_ruby is not set
+  INFO ---------------------------------------------------------------------------
+  INFO START 2021-04-16 14:38:45 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [0c2d075d] Running /usr/bin/env which passenger as root@178.62.89.200
+ DEBUG [0c2d075d] Command: /usr/bin/env which passenger
+ DEBUG [0c2d075d] Finished in 1.176 seconds with exit status 1 (failed).
+  INFO [a9409baf] Running /usr/bin/env mkdir -p /tmp as root@178.62.89.200
+ DEBUG [a9409baf] Command: /usr/bin/env mkdir -p /tmp
+  INFO [a9409baf] Finished in 0.028 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-44fafae10e144f1c6c41.sh 0.0%
+  INFO Uploading /tmp/git-ssh-44fafae10e144f1c6c41.sh 100.0%
+  INFO [56b25238] Running /usr/bin/env chmod 700 /tmp/git-ssh-44fafae10e144f1c6c41.sh as root@178.62.89.200
+ DEBUG [56b25238] Command: /usr/bin/env chmod 700 /tmp/git-ssh-44fafae10e144f1c6c41.sh
+  INFO [56b25238] Finished in 0.031 seconds with exit status 0 (successful).
+  INFO [be79eeec] Running /usr/bin/env git ls-remote git@github.com:GMalzac/cap-sinatra.git HEAD as root@178.62.89.200
+ DEBUG [be79eeec] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-44fafae10e144f1c6c41.sh" ; /usr/bin/env git ls-remote git@github.com:GMalzac/cap-sinatra.git HEAD )
+ DEBUG [be79eeec] 	88d98064c36f85489e87a4cb01ee6bf733cc2ff1	HEAD
+  INFO [be79eeec] Finished in 1.273 seconds with exit status 0 (successful).
+  INFO [b20e348b] Running /usr/bin/env mkdir -p /var/www/cap-sinatra/shared /var/www/cap-sinatra/releases as root@178.62.89.200
+ DEBUG [b20e348b] Command: /usr/bin/env mkdir -p /var/www/cap-sinatra/shared /var/www/cap-sinatra/releases
+  INFO [b20e348b] Finished in 0.036 seconds with exit status 0 (successful).
+ DEBUG [ec77fb4b] Running [ -f /var/www/cap-sinatra/current/REVISION ] as root@178.62.89.200
+ DEBUG [ec77fb4b] Command: [ -f /var/www/cap-sinatra/current/REVISION ]
+ DEBUG [ec77fb4b] Finished in 0.071 seconds with exit status 0 (successful).
+ DEBUG [4dcb966b] Running /usr/bin/env cat /var/www/cap-sinatra/current/REVISION 2>/dev/null as root@178.62.89.200
+ DEBUG [4dcb966b] Command: /usr/bin/env cat /var/www/cap-sinatra/current/REVISION 2>/dev/null
+ DEBUG [4dcb966b] 	53e9b2fa995367601a4dc22c4de2f68778f1b06d
+ DEBUG [4dcb966b] Finished in 0.034 seconds with exit status 0 (successful).
+ DEBUG [fe7cf701] Running [ -f /var/www/cap-sinatra/repo/HEAD ] as root@178.62.89.200
+ DEBUG [fe7cf701] Command: [ -f /var/www/cap-sinatra/repo/HEAD ]
+ DEBUG [fe7cf701] Finished in 0.070 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/cap-sinatra/repo
+ DEBUG [7d2b722e] Running if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [7d2b722e] Command: if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi
+ DEBUG [7d2b722e] Finished in 0.029 seconds with exit status 0 (successful).
+  INFO [493c51b6] Running /usr/bin/env git remote set-url origin git@github.com:GMalzac/cap-sinatra.git as root@178.62.89.200
+ DEBUG [493c51b6] Command: cd /var/www/cap-sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-44fafae10e144f1c6c41.sh" ; /usr/bin/env git remote set-url origin git@github.com:GMalzac/cap-sinatra.git )
+  INFO [493c51b6] Finished in 0.080 seconds with exit status 0 (successful).
+  INFO [084744f9] Running /usr/bin/env git remote update --prune as root@178.62.89.200
+ DEBUG [084744f9] Command: cd /var/www/cap-sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-44fafae10e144f1c6c41.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [084744f9] 	Fetching origin
+ DEBUG [084744f9] 	From github.com:GMalzac/cap-sinatra
+ DEBUG [084744f9] 	   fa315da..88d9806  master     -> master
+  INFO [084744f9] Finished in 1.464 seconds with exit status 0 (successful).
+ DEBUG [256de5d4] Running if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [256de5d4] Command: if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi
+ DEBUG [256de5d4] Finished in 0.031 seconds with exit status 0 (successful).
+  INFO [7631ac5e] Running /usr/bin/env mkdir -p /var/www/cap-sinatra/releases/20210416133848 as root@178.62.89.200
+ DEBUG [7631ac5e] Command: cd /var/www/cap-sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-44fafae10e144f1c6c41.sh" ; /usr/bin/env mkdir -p /var/www/cap-sinatra/releases/20210416133848 )
+  INFO [7631ac5e] Finished in 0.075 seconds with exit status 0 (successful).
+  INFO [f48eaae2] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/cap-sinatra/releases/20210416133848 as root@178.62.89.200
+ DEBUG [f48eaae2] Command: cd /var/www/cap-sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-44fafae10e144f1c6c41.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/cap-sinatra/releases/20210416133848 )
+  INFO [f48eaae2] Finished in 0.042 seconds with exit status 0 (successful).
+ DEBUG [d3308b12] Running if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [d3308b12] Command: if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi
+ DEBUG [d3308b12] Finished in 0.077 seconds with exit status 0 (successful).
+ DEBUG [44dc3554] Running /usr/bin/env git rev-list --max-count=1 master as root@178.62.89.200
+ DEBUG [44dc3554] Command: cd /var/www/cap-sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-44fafae10e144f1c6c41.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [44dc3554] 	88d98064c36f85489e87a4cb01ee6bf733cc2ff1
+ DEBUG [44dc3554] Finished in 0.035 seconds with exit status 0 (successful).
+ DEBUG [5df02b51] Running if test ! -d /var/www/cap-sinatra/releases/20210416133848; then echo "Directory does not exist '/var/www/cap-sinatra/releases/20210416133848'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [5df02b51] Command: if test ! -d /var/www/cap-sinatra/releases/20210416133848; then echo "Directory does not exist '/var/www/cap-sinatra/releases/20210416133848'" 1>&2; false; fi
+ DEBUG [5df02b51] Finished in 0.074 seconds with exit status 0 (successful).
+  INFO [000d18f3] Running /usr/bin/env echo "88d98064c36f85489e87a4cb01ee6bf733cc2ff1" > REVISION as root@178.62.89.200
+ DEBUG [000d18f3] Command: cd /var/www/cap-sinatra/releases/20210416133848 && /usr/bin/env echo "88d98064c36f85489e87a4cb01ee6bf733cc2ff1" > REVISION
+  INFO [000d18f3] Finished in 0.037 seconds with exit status 0 (successful).
+ DEBUG [15b515e8] Running if test ! -d /var/www/cap-sinatra/releases/20210416133848; then echo "Directory does not exist '/var/www/cap-sinatra/releases/20210416133848'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [15b515e8] Command: if test ! -d /var/www/cap-sinatra/releases/20210416133848; then echo "Directory does not exist '/var/www/cap-sinatra/releases/20210416133848'" 1>&2; false; fi
+ DEBUG [15b515e8] Finished in 0.083 seconds with exit status 0 (successful).
+  INFO [48dfb9c9] Running /usr/local/bin/chruby-exec ruby-2.6.6 -- bundle config --local deployment true as root@178.62.89.200
+ DEBUG [48dfb9c9] Command: cd /var/www/cap-sinatra/releases/20210416133848 && /usr/local/bin/chruby-exec ruby-2.6.6 -- bundle config --local deployment true
+ DEBUG [48dfb9c9] 	/bin/bash: chruby: command not found
+  INFO ---------------------------------------------------------------------------
+  INFO START 2021-04-16 14:42:23 +0100 cap production deploy:check
+  INFO ---------------------------------------------------------------------------
+ DEBUG [8a4b3ab7] Running /usr/bin/env which passenger as root@178.62.89.200
+ DEBUG [8a4b3ab7] Command: /usr/bin/env which passenger
+ DEBUG [8a4b3ab7] Finished in 1.084 seconds with exit status 1 (failed).
+  INFO [8e377572] Running /usr/bin/env mkdir -p /tmp as root@178.62.89.200
+ DEBUG [8e377572] Command: /usr/bin/env mkdir -p /tmp
+  INFO [8e377572] Finished in 0.029 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-8f9e95304ef7cddcd5fe.sh 0.0%
+  INFO Uploading /tmp/git-ssh-8f9e95304ef7cddcd5fe.sh 100.0%
+  INFO [221c1e26] Running /usr/bin/env chmod 700 /tmp/git-ssh-8f9e95304ef7cddcd5fe.sh as root@178.62.89.200
+ DEBUG [221c1e26] Command: /usr/bin/env chmod 700 /tmp/git-ssh-8f9e95304ef7cddcd5fe.sh
+  INFO [221c1e26] Finished in 0.031 seconds with exit status 0 (successful).
+  INFO [1531ab87] Running /usr/bin/env git ls-remote git@github.com:GMalzac/cap-sinatra.git HEAD as root@178.62.89.200
+ DEBUG [1531ab87] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-8f9e95304ef7cddcd5fe.sh" ; /usr/bin/env git ls-remote git@github.com:GMalzac/cap-sinatra.git HEAD )
+ DEBUG [1531ab87] 	88d98064c36f85489e87a4cb01ee6bf733cc2ff1	HEAD
+  INFO [1531ab87] Finished in 1.302 seconds with exit status 0 (successful).
+  INFO [518ed4fe] Running /usr/bin/env mkdir -p /var/www/cap-sinatra/shared /var/www/cap-sinatra/releases as root@178.62.89.200
+ DEBUG [518ed4fe] Command: /usr/bin/env mkdir -p /var/www/cap-sinatra/shared /var/www/cap-sinatra/releases
+  INFO [518ed4fe] Finished in 0.039 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2021-04-16 14:42:46 +0100 cap production git:check
+  INFO ---------------------------------------------------------------------------
+ DEBUG [fc17184d] Running /usr/bin/env which passenger as root@178.62.89.200
+ DEBUG [fc17184d] Command: /usr/bin/env which passenger
+ DEBUG [fc17184d] Finished in 1.082 seconds with exit status 1 (failed).
+  INFO [210b27cb] Running /usr/bin/env mkdir -p /tmp as root@178.62.89.200
+ DEBUG [210b27cb] Command: /usr/bin/env mkdir -p /tmp
+  INFO [210b27cb] Finished in 0.031 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-e0ce8c2555462ee3517c.sh 0.0%
+  INFO Uploading /tmp/git-ssh-e0ce8c2555462ee3517c.sh 100.0%
+  INFO [713f048e] Running /usr/bin/env chmod 700 /tmp/git-ssh-e0ce8c2555462ee3517c.sh as root@178.62.89.200
+ DEBUG [713f048e] Command: /usr/bin/env chmod 700 /tmp/git-ssh-e0ce8c2555462ee3517c.sh
+  INFO [713f048e] Finished in 0.032 seconds with exit status 0 (successful).
+  INFO [8e7ad683] Running /usr/bin/env git ls-remote git@github.com:GMalzac/cap-sinatra.git HEAD as root@178.62.89.200
+ DEBUG [8e7ad683] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-e0ce8c2555462ee3517c.sh" ; /usr/bin/env git ls-remote git@github.com:GMalzac/cap-sinatra.git HEAD )
+ DEBUG [8e7ad683] 	88d98064c36f85489e87a4cb01ee6bf733cc2ff1	HEAD
+  INFO [8e7ad683] Finished in 1.408 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2021-04-16 14:47:16 +0100 cap production git:check
+  INFO ---------------------------------------------------------------------------
+ DEBUG [94e66b3f] Running /usr/bin/env which passenger as root@178.62.89.200
+ DEBUG [94e66b3f] Command: /usr/bin/env which passenger
+ DEBUG [94e66b3f] Finished in 1.184 seconds with exit status 1 (failed).
+  INFO [3ddcc344] Running /usr/bin/env mkdir -p /tmp as root@178.62.89.200
+ DEBUG [3ddcc344] Command: /usr/bin/env mkdir -p /tmp
+  INFO [3ddcc344] Finished in 0.031 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-00d7b92d6ffd7e863a26.sh 0.0%
+  INFO Uploading /tmp/git-ssh-00d7b92d6ffd7e863a26.sh 100.0%
+  INFO [06db5947] Running /usr/bin/env chmod 700 /tmp/git-ssh-00d7b92d6ffd7e863a26.sh as root@178.62.89.200
+ DEBUG [06db5947] Command: /usr/bin/env chmod 700 /tmp/git-ssh-00d7b92d6ffd7e863a26.sh
+  INFO [06db5947] Finished in 0.034 seconds with exit status 0 (successful).
+  INFO [2c14ecc6] Running /usr/bin/env git ls-remote git@github.com:GMalzac/cap-sinatra.git HEAD as root@178.62.89.200
+ DEBUG [2c14ecc6] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-00d7b92d6ffd7e863a26.sh" ; /usr/bin/env git ls-remote git@github.com:GMalzac/cap-sinatra.git HEAD )
+ DEBUG [2c14ecc6] 	88d98064c36f85489e87a4cb01ee6bf733cc2ff1	HEAD
+  INFO [2c14ecc6] Finished in 1.204 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2021-04-16 14:47:30 +0100 cap production deploy:check
+  INFO ---------------------------------------------------------------------------
+ DEBUG [49634314] Running /usr/bin/env which passenger as root@178.62.89.200
+ DEBUG [49634314] Command: /usr/bin/env which passenger
+ DEBUG [49634314] Finished in 1.369 seconds with exit status 1 (failed).
+  INFO [7ca9e841] Running /usr/bin/env mkdir -p /tmp as root@178.62.89.200
+ DEBUG [7ca9e841] Command: /usr/bin/env mkdir -p /tmp
+  INFO [7ca9e841] Finished in 0.033 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-34d586c4d3232e654ab2.sh 0.0%
+  INFO Uploading /tmp/git-ssh-34d586c4d3232e654ab2.sh 100.0%
+  INFO [b7876bb4] Running /usr/bin/env chmod 700 /tmp/git-ssh-34d586c4d3232e654ab2.sh as root@178.62.89.200
+ DEBUG [b7876bb4] Command: /usr/bin/env chmod 700 /tmp/git-ssh-34d586c4d3232e654ab2.sh
+  INFO [b7876bb4] Finished in 0.043 seconds with exit status 0 (successful).
+  INFO [d4dc2a3b] Running /usr/bin/env git ls-remote git@github.com:GMalzac/cap-sinatra.git HEAD as root@178.62.89.200
+ DEBUG [d4dc2a3b] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-34d586c4d3232e654ab2.sh" ; /usr/bin/env git ls-remote git@github.com:GMalzac/cap-sinatra.git HEAD )
+ DEBUG [d4dc2a3b] 	88d98064c36f85489e87a4cb01ee6bf733cc2ff1	HEAD
+  INFO [d4dc2a3b] Finished in 1.304 seconds with exit status 0 (successful).
+  INFO [fa0459c2] Running /usr/bin/env mkdir -p /var/www/cap-sinatra/shared /var/www/cap-sinatra/releases as root@178.62.89.200
+ DEBUG [fa0459c2] Command: /usr/bin/env mkdir -p /var/www/cap-sinatra/shared /var/www/cap-sinatra/releases
+  INFO [fa0459c2] Finished in 0.038 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2021-04-16 14:48:30 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [001e43f6] Running /usr/bin/env which passenger as root@178.62.89.200
+ DEBUG [001e43f6] Command: /usr/bin/env which passenger
+ DEBUG [001e43f6] Finished in 1.014 seconds with exit status 1 (failed).
+  INFO [f3c67565] Running /usr/bin/env mkdir -p /tmp as root@178.62.89.200
+ DEBUG [f3c67565] Command: /usr/bin/env mkdir -p /tmp
+  INFO [f3c67565] Finished in 0.029 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-675d81297a1fa0c86af2.sh 0.0%
+  INFO Uploading /tmp/git-ssh-675d81297a1fa0c86af2.sh 100.0%
+  INFO [caebd6b9] Running /usr/bin/env chmod 700 /tmp/git-ssh-675d81297a1fa0c86af2.sh as root@178.62.89.200
+ DEBUG [caebd6b9] Command: /usr/bin/env chmod 700 /tmp/git-ssh-675d81297a1fa0c86af2.sh
+  INFO [caebd6b9] Finished in 0.037 seconds with exit status 0 (successful).
+  INFO [3a72ca61] Running /usr/bin/env git ls-remote git@github.com:GMalzac/cap-sinatra.git HEAD as root@178.62.89.200
+ DEBUG [3a72ca61] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-675d81297a1fa0c86af2.sh" ; /usr/bin/env git ls-remote git@github.com:GMalzac/cap-sinatra.git HEAD )
+ DEBUG [3a72ca61] 	88d98064c36f85489e87a4cb01ee6bf733cc2ff1	HEAD
+  INFO [3a72ca61] Finished in 1.278 seconds with exit status 0 (successful).
+  INFO [5f9e4017] Running /usr/bin/env mkdir -p /var/www/cap-sinatra/shared /var/www/cap-sinatra/releases as root@178.62.89.200
+ DEBUG [5f9e4017] Command: /usr/bin/env mkdir -p /var/www/cap-sinatra/shared /var/www/cap-sinatra/releases
+  INFO [5f9e4017] Finished in 0.035 seconds with exit status 0 (successful).
+ DEBUG [039698b6] Running [ -f /var/www/cap-sinatra/current/REVISION ] as root@178.62.89.200
+ DEBUG [039698b6] Command: [ -f /var/www/cap-sinatra/current/REVISION ]
+ DEBUG [039698b6] Finished in 0.069 seconds with exit status 0 (successful).
+ DEBUG [acd89a63] Running /usr/bin/env cat /var/www/cap-sinatra/current/REVISION 2>/dev/null as root@178.62.89.200
+ DEBUG [acd89a63] Command: /usr/bin/env cat /var/www/cap-sinatra/current/REVISION 2>/dev/null
+ DEBUG [acd89a63] 	53e9b2fa995367601a4dc22c4de2f68778f1b06d
+ DEBUG [acd89a63] Finished in 0.031 seconds with exit status 0 (successful).
+ DEBUG [bd88059b] Running [ -f /var/www/cap-sinatra/repo/HEAD ] as root@178.62.89.200
+ DEBUG [bd88059b] Command: [ -f /var/www/cap-sinatra/repo/HEAD ]
+ DEBUG [bd88059b] Finished in 0.069 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/cap-sinatra/repo
+ DEBUG [0ab329d5] Running if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [0ab329d5] Command: if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi
+ DEBUG [0ab329d5] Finished in 0.029 seconds with exit status 0 (successful).
+  INFO [6486d406] Running /usr/bin/env git remote set-url origin git@github.com:GMalzac/cap-sinatra.git as root@178.62.89.200
+ DEBUG [6486d406] Command: cd /var/www/cap-sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-675d81297a1fa0c86af2.sh" ; /usr/bin/env git remote set-url origin git@github.com:GMalzac/cap-sinatra.git )
+  INFO [6486d406] Finished in 0.073 seconds with exit status 0 (successful).
+  INFO [9daca2d9] Running /usr/bin/env git remote update --prune as root@178.62.89.200
+ DEBUG [9daca2d9] Command: cd /var/www/cap-sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-675d81297a1fa0c86af2.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [9daca2d9] 	Fetching origin
+  INFO [9daca2d9] Finished in 1.154 seconds with exit status 0 (successful).
+ DEBUG [e3943435] Running if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [e3943435] Command: if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi
+ DEBUG [e3943435] Finished in 0.027 seconds with exit status 0 (successful).
+  INFO [4df5d163] Running /usr/bin/env mkdir -p /var/www/cap-sinatra/releases/20210416134832 as root@178.62.89.200
+ DEBUG [4df5d163] Command: cd /var/www/cap-sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-675d81297a1fa0c86af2.sh" ; /usr/bin/env mkdir -p /var/www/cap-sinatra/releases/20210416134832 )
+  INFO [4df5d163] Finished in 0.075 seconds with exit status 0 (successful).
+  INFO [6aa16c6c] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/cap-sinatra/releases/20210416134832 as root@178.62.89.200
+ DEBUG [6aa16c6c] Command: cd /var/www/cap-sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-675d81297a1fa0c86af2.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/cap-sinatra/releases/20210416134832 )
+  INFO [6aa16c6c] Finished in 0.039 seconds with exit status 0 (successful).
+ DEBUG [d3eb699c] Running if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [d3eb699c] Command: if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi
+ DEBUG [d3eb699c] Finished in 0.076 seconds with exit status 0 (successful).
+ DEBUG [57d65b30] Running /usr/bin/env git rev-list --max-count=1 master as root@178.62.89.200
+ DEBUG [57d65b30] Command: cd /var/www/cap-sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-675d81297a1fa0c86af2.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [57d65b30] 	88d98064c36f85489e87a4cb01ee6bf733cc2ff1
+ DEBUG [57d65b30] Finished in 0.048 seconds with exit status 0 (successful).
+ DEBUG [7a56f9d7] Running if test ! -d /var/www/cap-sinatra/releases/20210416134832; then echo "Directory does not exist '/var/www/cap-sinatra/releases/20210416134832'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [7a56f9d7] Command: if test ! -d /var/www/cap-sinatra/releases/20210416134832; then echo "Directory does not exist '/var/www/cap-sinatra/releases/20210416134832'" 1>&2; false; fi
+ DEBUG [7a56f9d7] Finished in 0.073 seconds with exit status 0 (successful).
+  INFO [33d35c71] Running /usr/bin/env echo "88d98064c36f85489e87a4cb01ee6bf733cc2ff1" > REVISION as root@178.62.89.200
+ DEBUG [33d35c71] Command: cd /var/www/cap-sinatra/releases/20210416134832 && /usr/bin/env echo "88d98064c36f85489e87a4cb01ee6bf733cc2ff1" > REVISION
+  INFO [33d35c71] Finished in 0.035 seconds with exit status 0 (successful).
+ DEBUG [f170eeb2] Running if test ! -d /var/www/cap-sinatra/releases/20210416134832; then echo "Directory does not exist '/var/www/cap-sinatra/releases/20210416134832'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [f170eeb2] Command: if test ! -d /var/www/cap-sinatra/releases/20210416134832; then echo "Directory does not exist '/var/www/cap-sinatra/releases/20210416134832'" 1>&2; false; fi
+ DEBUG [f170eeb2] Finished in 0.076 seconds with exit status 0 (successful).
+  INFO [aaaa8b06] Running /usr/local/bin/chruby-exec ruby-2.6.6 -- bundle config --local deployment true as root@178.62.89.200
+ DEBUG [aaaa8b06] Command: cd /var/www/cap-sinatra/releases/20210416134832 && /usr/local/bin/chruby-exec ruby-2.6.6 -- bundle config --local deployment true
+ DEBUG [aaaa8b06] 	/bin/bash: chruby: command not found
+  INFO ---------------------------------------------------------------------------
+  INFO START 2021-04-16 14:51:36 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [e9f44744] Running /usr/bin/env which passenger as root@178.62.89.200
+ DEBUG [e9f44744] Command: /usr/bin/env which passenger
+ DEBUG [e9f44744] Finished in 1.722 seconds with exit status 1 (failed).
+  INFO [dd96e6d8] Running /usr/bin/env mkdir -p /tmp as root@178.62.89.200
+ DEBUG [dd96e6d8] Command: /usr/bin/env mkdir -p /tmp
+  INFO [dd96e6d8] Finished in 0.034 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-338e1ecb126f5d5734a8.sh 0.0%
+  INFO Uploading /tmp/git-ssh-338e1ecb126f5d5734a8.sh 100.0%
+  INFO [9d4bbcc7] Running /usr/bin/env chmod 700 /tmp/git-ssh-338e1ecb126f5d5734a8.sh as root@178.62.89.200
+ DEBUG [9d4bbcc7] Command: /usr/bin/env chmod 700 /tmp/git-ssh-338e1ecb126f5d5734a8.sh
+  INFO [9d4bbcc7] Finished in 0.032 seconds with exit status 0 (successful).
+  INFO [e9a1aa3f] Running /usr/bin/env git ls-remote git@github.com:GMalzac/cap-sinatra.git HEAD as root@178.62.89.200
+ DEBUG [e9a1aa3f] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-338e1ecb126f5d5734a8.sh" ; /usr/bin/env git ls-remote git@github.com:GMalzac/cap-sinatra.git HEAD )
+ DEBUG [e9a1aa3f] 	88d98064c36f85489e87a4cb01ee6bf733cc2ff1	HEAD
+  INFO [e9a1aa3f] Finished in 1.345 seconds with exit status 0 (successful).
+  INFO [df3f5c87] Running /usr/bin/env mkdir -p /var/www/cap-sinatra/shared /var/www/cap-sinatra/releases as root@178.62.89.200
+ DEBUG [df3f5c87] Command: /usr/bin/env mkdir -p /var/www/cap-sinatra/shared /var/www/cap-sinatra/releases
+  INFO [df3f5c87] Finished in 0.035 seconds with exit status 0 (successful).
+ DEBUG [b688a4d8] Running [ -f /var/www/cap-sinatra/current/REVISION ] as root@178.62.89.200
+ DEBUG [b688a4d8] Command: [ -f /var/www/cap-sinatra/current/REVISION ]
+ DEBUG [b688a4d8] Finished in 0.070 seconds with exit status 0 (successful).
+ DEBUG [473b3ab9] Running /usr/bin/env cat /var/www/cap-sinatra/current/REVISION 2>/dev/null as root@178.62.89.200
+ DEBUG [473b3ab9] Command: /usr/bin/env cat /var/www/cap-sinatra/current/REVISION 2>/dev/null
+ DEBUG [473b3ab9] 	53e9b2fa995367601a4dc22c4de2f68778f1b06d
+ DEBUG [473b3ab9] Finished in 0.035 seconds with exit status 0 (successful).
+ DEBUG [67139fa5] Running [ -f /var/www/cap-sinatra/repo/HEAD ] as root@178.62.89.200
+ DEBUG [67139fa5] Command: [ -f /var/www/cap-sinatra/repo/HEAD ]
+ DEBUG [67139fa5] Finished in 0.072 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/cap-sinatra/repo
+ DEBUG [bbdbd079] Running if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [bbdbd079] Command: if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi
+ DEBUG [bbdbd079] Finished in 0.033 seconds with exit status 0 (successful).
+  INFO [ccbd02e4] Running /usr/bin/env git remote set-url origin git@github.com:GMalzac/cap-sinatra.git as root@178.62.89.200
+ DEBUG [ccbd02e4] Command: cd /var/www/cap-sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-338e1ecb126f5d5734a8.sh" ; /usr/bin/env git remote set-url origin git@github.com:GMalzac/cap-sinatra.git )
+  INFO [ccbd02e4] Finished in 0.086 seconds with exit status 0 (successful).
+  INFO [84244b55] Running /usr/bin/env git remote update --prune as root@178.62.89.200
+ DEBUG [84244b55] Command: cd /var/www/cap-sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-338e1ecb126f5d5734a8.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [84244b55] 	Fetching origin
+  INFO [84244b55] Finished in 1.214 seconds with exit status 0 (successful).
+ DEBUG [f4ce5892] Running if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [f4ce5892] Command: if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi
+ DEBUG [f4ce5892] Finished in 0.037 seconds with exit status 0 (successful).
+  INFO [dbebc3d6] Running /usr/bin/env mkdir -p /var/www/cap-sinatra/releases/20210416135140 as root@178.62.89.200
+ DEBUG [dbebc3d6] Command: cd /var/www/cap-sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-338e1ecb126f5d5734a8.sh" ; /usr/bin/env mkdir -p /var/www/cap-sinatra/releases/20210416135140 )
+  INFO [dbebc3d6] Finished in 0.091 seconds with exit status 0 (successful).
+  INFO [1abdf887] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/cap-sinatra/releases/20210416135140 as root@178.62.89.200
+ DEBUG [1abdf887] Command: cd /var/www/cap-sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-338e1ecb126f5d5734a8.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/cap-sinatra/releases/20210416135140 )
+  INFO [1abdf887] Finished in 0.049 seconds with exit status 0 (successful).
+ DEBUG [dfb87621] Running if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [dfb87621] Command: if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi
+ DEBUG [dfb87621] Finished in 0.074 seconds with exit status 0 (successful).
+ DEBUG [5919d383] Running /usr/bin/env git rev-list --max-count=1 master as root@178.62.89.200
+ DEBUG [5919d383] Command: cd /var/www/cap-sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-338e1ecb126f5d5734a8.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [5919d383] 	88d98064c36f85489e87a4cb01ee6bf733cc2ff1
+ DEBUG [5919d383] Finished in 0.049 seconds with exit status 0 (successful).
+ DEBUG [1abb028a] Running if test ! -d /var/www/cap-sinatra/releases/20210416135140; then echo "Directory does not exist '/var/www/cap-sinatra/releases/20210416135140'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [1abb028a] Command: if test ! -d /var/www/cap-sinatra/releases/20210416135140; then echo "Directory does not exist '/var/www/cap-sinatra/releases/20210416135140'" 1>&2; false; fi
+ DEBUG [1abb028a] Finished in 0.072 seconds with exit status 0 (successful).
+  INFO [355a2dd3] Running /usr/bin/env echo "88d98064c36f85489e87a4cb01ee6bf733cc2ff1" > REVISION as root@178.62.89.200
+ DEBUG [355a2dd3] Command: cd /var/www/cap-sinatra/releases/20210416135140 && /usr/bin/env echo "88d98064c36f85489e87a4cb01ee6bf733cc2ff1" > REVISION
+  INFO [355a2dd3] Finished in 0.041 seconds with exit status 0 (successful).
+ DEBUG [c93c78ce] Running if test ! -d /var/www/cap-sinatra/releases/20210416135140; then echo "Directory does not exist '/var/www/cap-sinatra/releases/20210416135140'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [c93c78ce] Command: if test ! -d /var/www/cap-sinatra/releases/20210416135140; then echo "Directory does not exist '/var/www/cap-sinatra/releases/20210416135140'" 1>&2; false; fi
+ DEBUG [c93c78ce] Finished in 0.068 seconds with exit status 0 (successful).
+  INFO [ad652fda] Running /usr/local/bin/chruby-exec ruby-2.6.6 -- bundle config --local deployment true as root@178.62.89.200
+ DEBUG [ad652fda] Command: cd /var/www/cap-sinatra/releases/20210416135140 && /usr/local/bin/chruby-exec ruby-2.6.6 -- bundle config --local deployment true
+ DEBUG [ad652fda] 	/bin/bash: chruby: command not found
+  INFO ---------------------------------------------------------------------------
+  INFO START 2021-04-16 14:53:04 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [07ce5603] Running /usr/bin/env which passenger as root@178.62.89.200
+ DEBUG [07ce5603] Command: /usr/bin/env which passenger
+ DEBUG [07ce5603] Finished in 2.062 seconds with exit status 1 (failed).
+  INFO [c876f1ac] Running /usr/bin/env mkdir -p /tmp as root@178.62.89.200
+ DEBUG [c876f1ac] Command: /usr/bin/env mkdir -p /tmp
+  INFO [c876f1ac] Finished in 0.035 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-4f35bb464d96c9958b0a.sh 0.0%
+  INFO Uploading /tmp/git-ssh-4f35bb464d96c9958b0a.sh 100.0%
+  INFO [0b3a6514] Running /usr/bin/env chmod 700 /tmp/git-ssh-4f35bb464d96c9958b0a.sh as root@178.62.89.200
+ DEBUG [0b3a6514] Command: /usr/bin/env chmod 700 /tmp/git-ssh-4f35bb464d96c9958b0a.sh
+  INFO [0b3a6514] Finished in 0.032 seconds with exit status 0 (successful).
+  INFO [ccd4f550] Running /usr/bin/env git ls-remote git@github.com:GMalzac/cap-sinatra.git HEAD as root@178.62.89.200
+ DEBUG [ccd4f550] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-4f35bb464d96c9958b0a.sh" ; /usr/bin/env git ls-remote git@github.com:GMalzac/cap-sinatra.git HEAD )
+ DEBUG [ccd4f550] 	f9c9ff9dff51ef0103be4e669feda402e821ce5e	HEAD
+  INFO [ccd4f550] Finished in 1.210 seconds with exit status 0 (successful).
+  INFO [f36582b4] Running /usr/bin/env mkdir -p /var/www/cap-sinatra/shared /var/www/cap-sinatra/releases as root@178.62.89.200
+ DEBUG [f36582b4] Command: /usr/bin/env mkdir -p /var/www/cap-sinatra/shared /var/www/cap-sinatra/releases
+  INFO [f36582b4] Finished in 0.049 seconds with exit status 0 (successful).
+ DEBUG [e47b2b26] Running [ -f /var/www/cap-sinatra/current/REVISION ] as root@178.62.89.200
+ DEBUG [e47b2b26] Command: [ -f /var/www/cap-sinatra/current/REVISION ]
+ DEBUG [e47b2b26] Finished in 0.076 seconds with exit status 0 (successful).
+ DEBUG [656649af] Running /usr/bin/env cat /var/www/cap-sinatra/current/REVISION 2>/dev/null as root@178.62.89.200
+ DEBUG [656649af] Command: /usr/bin/env cat /var/www/cap-sinatra/current/REVISION 2>/dev/null
+ DEBUG [656649af] 	53e9b2fa995367601a4dc22c4de2f68778f1b06d
+ DEBUG [656649af] Finished in 0.030 seconds with exit status 0 (successful).
+ DEBUG [310d2eab] Running [ -f /var/www/cap-sinatra/repo/HEAD ] as root@178.62.89.200
+ DEBUG [310d2eab] Command: [ -f /var/www/cap-sinatra/repo/HEAD ]
+ DEBUG [310d2eab] Finished in 0.068 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/cap-sinatra/repo
+ DEBUG [3694d896] Running if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [3694d896] Command: if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi
+ DEBUG [3694d896] Finished in 0.028 seconds with exit status 0 (successful).
+  INFO [c431ba43] Running /usr/bin/env git remote set-url origin git@github.com:GMalzac/cap-sinatra.git as root@178.62.89.200
+ DEBUG [c431ba43] Command: cd /var/www/cap-sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-4f35bb464d96c9958b0a.sh" ; /usr/bin/env git remote set-url origin git@github.com:GMalzac/cap-sinatra.git )
+  INFO [c431ba43] Finished in 0.074 seconds with exit status 0 (successful).
+  INFO [1079a88d] Running /usr/bin/env git remote update --prune as root@178.62.89.200
+ DEBUG [1079a88d] Command: cd /var/www/cap-sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-4f35bb464d96c9958b0a.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [1079a88d] 	Fetching origin
+ DEBUG [1079a88d] 	From github.com:GMalzac/cap-sinatra
+ DEBUG [1079a88d] 	   88d9806..f9c9ff9  master     -> master
+  INFO [1079a88d] Finished in 1.509 seconds with exit status 0 (successful).
+ DEBUG [abb81f6a] Running if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [abb81f6a] Command: if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi
+ DEBUG [abb81f6a] Finished in 0.037 seconds with exit status 0 (successful).
+  INFO [56ac2531] Running /usr/bin/env mkdir -p /var/www/cap-sinatra/releases/20210416135307 as root@178.62.89.200
+ DEBUG [56ac2531] Command: cd /var/www/cap-sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-4f35bb464d96c9958b0a.sh" ; /usr/bin/env mkdir -p /var/www/cap-sinatra/releases/20210416135307 )
+  INFO [56ac2531] Finished in 0.076 seconds with exit status 0 (successful).
+  INFO [dbbf05c3] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/cap-sinatra/releases/20210416135307 as root@178.62.89.200
+ DEBUG [dbbf05c3] Command: cd /var/www/cap-sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-4f35bb464d96c9958b0a.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/cap-sinatra/releases/20210416135307 )
+  INFO [dbbf05c3] Finished in 0.056 seconds with exit status 0 (successful).
+ DEBUG [7c221532] Running if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [7c221532] Command: if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi
+ DEBUG [7c221532] Finished in 0.073 seconds with exit status 0 (successful).
+ DEBUG [42aaf4a2] Running /usr/bin/env git rev-list --max-count=1 master as root@178.62.89.200
+ DEBUG [42aaf4a2] Command: cd /var/www/cap-sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-4f35bb464d96c9958b0a.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [42aaf4a2] 	f9c9ff9dff51ef0103be4e669feda402e821ce5e
+ DEBUG [42aaf4a2] Finished in 0.036 seconds with exit status 0 (successful).
+ DEBUG [696f4c77] Running if test ! -d /var/www/cap-sinatra/releases/20210416135307; then echo "Directory does not exist '/var/www/cap-sinatra/releases/20210416135307'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [696f4c77] Command: if test ! -d /var/www/cap-sinatra/releases/20210416135307; then echo "Directory does not exist '/var/www/cap-sinatra/releases/20210416135307'" 1>&2; false; fi
+ DEBUG [696f4c77] Finished in 0.076 seconds with exit status 0 (successful).
+  INFO [0ab0b56f] Running /usr/bin/env echo "f9c9ff9dff51ef0103be4e669feda402e821ce5e" > REVISION as root@178.62.89.200
+ DEBUG [0ab0b56f] Command: cd /var/www/cap-sinatra/releases/20210416135307 && /usr/bin/env echo "f9c9ff9dff51ef0103be4e669feda402e821ce5e" > REVISION
+  INFO [0ab0b56f] Finished in 0.028 seconds with exit status 0 (successful).
+ DEBUG [068726b6] Running if test ! -d /var/www/cap-sinatra/releases/20210416135307; then echo "Directory does not exist '/var/www/cap-sinatra/releases/20210416135307'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [068726b6] Command: if test ! -d /var/www/cap-sinatra/releases/20210416135307; then echo "Directory does not exist '/var/www/cap-sinatra/releases/20210416135307'" 1>&2; false; fi
+ DEBUG [068726b6] Finished in 0.073 seconds with exit status 0 (successful).
+  INFO [546eb7c9] Running /usr/local/bin/chruby-exec ruby-2.6.6 -- bundle config --local deployment true as root@178.62.89.200
+ DEBUG [546eb7c9] Command: cd /var/www/cap-sinatra/releases/20210416135307 && /usr/local/bin/chruby-exec ruby-2.6.6 -- bundle config --local deployment true
+ DEBUG [546eb7c9] 	/bin/bash: chruby: command not found
+  INFO ---------------------------------------------------------------------------
+  INFO START 2021-04-16 15:12:26 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [d0be402e] Running /usr/bin/env which passenger as root@178.62.89.200
+ DEBUG [d0be402e] Command: /usr/bin/env which passenger
+ DEBUG [d0be402e] 	/usr/bin/passenger
+ DEBUG [d0be402e] Finished in 1.060 seconds with exit status 0 (successful).
+  INFO [52ad566b] Running /usr/bin/env mkdir -p /tmp as root@178.62.89.200
+ DEBUG [52ad566b] Command: /usr/bin/env mkdir -p /tmp
+  INFO [52ad566b] Finished in 0.028 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-8bd3a52ab618313c41f1.sh 0.0%
+  INFO Uploading /tmp/git-ssh-8bd3a52ab618313c41f1.sh 100.0%
+  INFO [6bde27dd] Running /usr/bin/env chmod 700 /tmp/git-ssh-8bd3a52ab618313c41f1.sh as root@178.62.89.200
+ DEBUG [6bde27dd] Command: /usr/bin/env chmod 700 /tmp/git-ssh-8bd3a52ab618313c41f1.sh
+  INFO [6bde27dd] Finished in 0.031 seconds with exit status 0 (successful).
+  INFO [e426798c] Running /usr/bin/env git ls-remote git@github.com:GMalzac/cap-sinatra.git HEAD as root@178.62.89.200
+ DEBUG [e426798c] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-8bd3a52ab618313c41f1.sh" ; /usr/bin/env git ls-remote git@github.com:GMalzac/cap-sinatra.git HEAD )
+ DEBUG [e426798c] 	5efb944f3ec82ca8c24294774a4cc719ae4e29fb	HEAD
+  INFO [e426798c] Finished in 1.347 seconds with exit status 0 (successful).
+  INFO [3554a239] Running /usr/bin/env mkdir -p /var/www/cap-sinatra/shared /var/www/cap-sinatra/releases as root@178.62.89.200
+ DEBUG [3554a239] Command: /usr/bin/env mkdir -p /var/www/cap-sinatra/shared /var/www/cap-sinatra/releases
+  INFO [3554a239] Finished in 0.038 seconds with exit status 0 (successful).
+ DEBUG [35aaaffa] Running [ -f /var/www/cap-sinatra/current/REVISION ] as root@178.62.89.200
+ DEBUG [35aaaffa] Command: [ -f /var/www/cap-sinatra/current/REVISION ]
+ DEBUG [35aaaffa] Finished in 0.071 seconds with exit status 0 (successful).
+ DEBUG [f9ea1426] Running /usr/bin/env cat /var/www/cap-sinatra/current/REVISION 2>/dev/null as root@178.62.89.200
+ DEBUG [f9ea1426] Command: /usr/bin/env cat /var/www/cap-sinatra/current/REVISION 2>/dev/null
+ DEBUG [f9ea1426] 	53e9b2fa995367601a4dc22c4de2f68778f1b06d
+ DEBUG [f9ea1426] Finished in 0.035 seconds with exit status 0 (successful).
+ DEBUG [698e20cd] Running [ -f /var/www/cap-sinatra/repo/HEAD ] as root@178.62.89.200
+ DEBUG [698e20cd] Command: [ -f /var/www/cap-sinatra/repo/HEAD ]
+ DEBUG [698e20cd] Finished in 0.073 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/cap-sinatra/repo
+ DEBUG [f5571e47] Running if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [f5571e47] Command: if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi
+ DEBUG [f5571e47] Finished in 0.030 seconds with exit status 0 (successful).
+  INFO [a2651b12] Running /usr/bin/env git remote set-url origin git@github.com:GMalzac/cap-sinatra.git as root@178.62.89.200
+ DEBUG [a2651b12] Command: cd /var/www/cap-sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-8bd3a52ab618313c41f1.sh" ; /usr/bin/env git remote set-url origin git@github.com:GMalzac/cap-sinatra.git )
+  INFO [a2651b12] Finished in 0.078 seconds with exit status 0 (successful).
+  INFO [8bbb40ef] Running /usr/bin/env git remote update --prune as root@178.62.89.200
+ DEBUG [8bbb40ef] Command: cd /var/www/cap-sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-8bd3a52ab618313c41f1.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [8bbb40ef] 	Fetching origin
+ DEBUG [8bbb40ef] 	From github.com:GMalzac/cap-sinatra
+   f9c9ff9..5efb944  master     -> master
+  INFO [8bbb40ef] Finished in 1.504 seconds with exit status 0 (successful).
+ DEBUG [7f8589cc] Running if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [7f8589cc] Command: if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi
+ DEBUG [7f8589cc] Finished in 0.031 seconds with exit status 0 (successful).
+  INFO [1fb770db] Running /usr/bin/env mkdir -p /var/www/cap-sinatra/releases/20210416141229 as root@178.62.89.200
+ DEBUG [1fb770db] Command: cd /var/www/cap-sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-8bd3a52ab618313c41f1.sh" ; /usr/bin/env mkdir -p /var/www/cap-sinatra/releases/20210416141229 )
+  INFO [1fb770db] Finished in 0.073 seconds with exit status 0 (successful).
+  INFO [132fe6e2] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/cap-sinatra/releases/20210416141229 as root@178.62.89.200
+ DEBUG [132fe6e2] Command: cd /var/www/cap-sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-8bd3a52ab618313c41f1.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/cap-sinatra/releases/20210416141229 )
+  INFO [132fe6e2] Finished in 0.035 seconds with exit status 0 (successful).
+ DEBUG [dbbe202c] Running if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [dbbe202c] Command: if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi
+ DEBUG [dbbe202c] Finished in 0.071 seconds with exit status 0 (successful).
+ DEBUG [3193f7bd] Running /usr/bin/env git rev-list --max-count=1 master as root@178.62.89.200
+ DEBUG [3193f7bd] Command: cd /var/www/cap-sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-8bd3a52ab618313c41f1.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [3193f7bd] 	5efb944f3ec82ca8c24294774a4cc719ae4e29fb
+ DEBUG [3193f7bd] Finished in 0.033 seconds with exit status 0 (successful).
+ DEBUG [f575472b] Running if test ! -d /var/www/cap-sinatra/releases/20210416141229; then echo "Directory does not exist '/var/www/cap-sinatra/releases/20210416141229'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [f575472b] Command: if test ! -d /var/www/cap-sinatra/releases/20210416141229; then echo "Directory does not exist '/var/www/cap-sinatra/releases/20210416141229'" 1>&2; false; fi
+ DEBUG [f575472b] Finished in 0.070 seconds with exit status 0 (successful).
+  INFO [7e184fd6] Running /usr/bin/env echo "5efb944f3ec82ca8c24294774a4cc719ae4e29fb" > REVISION as root@178.62.89.200
+ DEBUG [7e184fd6] Command: cd /var/www/cap-sinatra/releases/20210416141229 && /usr/bin/env echo "5efb944f3ec82ca8c24294774a4cc719ae4e29fb" > REVISION
+  INFO [7e184fd6] Finished in 0.037 seconds with exit status 0 (successful).
+ DEBUG [efe90780] Running if test ! -d /var/www/cap-sinatra/releases/20210416141229; then echo "Directory does not exist '/var/www/cap-sinatra/releases/20210416141229'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [efe90780] Command: if test ! -d /var/www/cap-sinatra/releases/20210416141229; then echo "Directory does not exist '/var/www/cap-sinatra/releases/20210416141229'" 1>&2; false; fi
+ DEBUG [efe90780] Finished in 0.071 seconds with exit status 0 (successful).
+  INFO [4d956fc1] Running /usr/local/bin/chruby-exec ruby-2.6.6 -- bundle config --local deployment true as root@178.62.89.200
+ DEBUG [4d956fc1] Command: cd /var/www/cap-sinatra/releases/20210416141229 && /usr/local/bin/chruby-exec ruby-2.6.6 -- bundle config --local deployment true
+ DEBUG [4d956fc1] 	/bin/bash: chruby: command not found
+  INFO ---------------------------------------------------------------------------
+  INFO START 2021-04-16 15:22:48 +0100 cap production deploy:check
+  INFO ---------------------------------------------------------------------------
+ DEBUG [76de9700] Running /usr/bin/env which passenger as root@178.62.89.200
+ DEBUG [76de9700] Command: /usr/bin/env which passenger
+ DEBUG [76de9700] 	/usr/bin/passenger
+ DEBUG [76de9700] Finished in 1.708 seconds with exit status 0 (successful).
+  INFO [0054c3b0] Running /usr/bin/env mkdir -p /tmp as root@178.62.89.200
+ DEBUG [0054c3b0] Command: /usr/bin/env mkdir -p /tmp
+  INFO [0054c3b0] Finished in 0.037 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-80f173096072e8c40bb0.sh 0.0%
+  INFO Uploading /tmp/git-ssh-80f173096072e8c40bb0.sh 100.0%
+  INFO [1dccbf58] Running /usr/bin/env chmod 700 /tmp/git-ssh-80f173096072e8c40bb0.sh as root@178.62.89.200
+ DEBUG [1dccbf58] Command: /usr/bin/env chmod 700 /tmp/git-ssh-80f173096072e8c40bb0.sh
+  INFO [1dccbf58] Finished in 0.038 seconds with exit status 0 (successful).
+  INFO [bc644afa] Running /usr/bin/env git ls-remote git@github.com:GMalzac/cap-sinatra.git HEAD as root@178.62.89.200
+ DEBUG [bc644afa] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-80f173096072e8c40bb0.sh" ; /usr/bin/env git ls-remote git@github.com:GMalzac/cap-sinatra.git HEAD )
+ DEBUG [bc644afa] 	5efb944f3ec82ca8c24294774a4cc719ae4e29fb	HEAD
+  INFO [bc644afa] Finished in 1.229 seconds with exit status 0 (successful).
+  INFO [40a36e7f] Running /usr/bin/env mkdir -p /var/www/cap-sinatra/shared /var/www/cap-sinatra/releases as root@178.62.89.200
+ DEBUG [40a36e7f] Command: /usr/bin/env mkdir -p /var/www/cap-sinatra/shared /var/www/cap-sinatra/releases
+  INFO [40a36e7f] Finished in 0.032 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2021-04-16 15:22:56 +0100 cap production git:check
+  INFO ---------------------------------------------------------------------------
+ DEBUG [c04473d1] Running /usr/bin/env which passenger as root@178.62.89.200
+ DEBUG [c04473d1] Command: /usr/bin/env which passenger
+ DEBUG [c04473d1] 	/usr/bin/passenger
+ DEBUG [c04473d1] Finished in 1.482 seconds with exit status 0 (successful).
+  INFO [d17a40ad] Running /usr/bin/env mkdir -p /tmp as root@178.62.89.200
+ DEBUG [d17a40ad] Command: /usr/bin/env mkdir -p /tmp
+  INFO [d17a40ad] Finished in 0.034 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-baccd23189f3707eeacd.sh 0.0%
+  INFO Uploading /tmp/git-ssh-baccd23189f3707eeacd.sh 100.0%
+  INFO [0b40993f] Running /usr/bin/env chmod 700 /tmp/git-ssh-baccd23189f3707eeacd.sh as root@178.62.89.200
+ DEBUG [0b40993f] Command: /usr/bin/env chmod 700 /tmp/git-ssh-baccd23189f3707eeacd.sh
+  INFO [0b40993f] Finished in 0.033 seconds with exit status 0 (successful).
+  INFO [14587b0d] Running /usr/bin/env git ls-remote git@github.com:GMalzac/cap-sinatra.git HEAD as root@178.62.89.200
+ DEBUG [14587b0d] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-baccd23189f3707eeacd.sh" ; /usr/bin/env git ls-remote git@github.com:GMalzac/cap-sinatra.git HEAD )
+ DEBUG [14587b0d] 	5efb944f3ec82ca8c24294774a4cc719ae4e29fb	HEAD
+  INFO [14587b0d] Finished in 1.319 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2021-04-16 15:24:19 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [019304d5] Running /usr/bin/env which passenger as root@178.62.89.200
+ DEBUG [019304d5] Command: /usr/bin/env which passenger
+ DEBUG [019304d5] 	/usr/bin/passenger
+ DEBUG [019304d5] Finished in 2.190 seconds with exit status 0 (successful).
+  INFO [8e239ac9] Running /usr/bin/env mkdir -p /tmp as root@178.62.89.200
+ DEBUG [8e239ac9] Command: /usr/bin/env mkdir -p /tmp
+  INFO [8e239ac9] Finished in 0.031 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-e5cf995db28287ecf1cc.sh 0.0%
+  INFO Uploading /tmp/git-ssh-e5cf995db28287ecf1cc.sh 100.0%
+  INFO [588698bd] Running /usr/bin/env chmod 700 /tmp/git-ssh-e5cf995db28287ecf1cc.sh as root@178.62.89.200
+ DEBUG [588698bd] Command: /usr/bin/env chmod 700 /tmp/git-ssh-e5cf995db28287ecf1cc.sh
+  INFO [588698bd] Finished in 0.034 seconds with exit status 0 (successful).
+  INFO [c72c5fb2] Running /usr/bin/env git ls-remote git@github.com:GMalzac/cap-sinatra.git HEAD as root@178.62.89.200
+ DEBUG [c72c5fb2] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-e5cf995db28287ecf1cc.sh" ; /usr/bin/env git ls-remote git@github.com:GMalzac/cap-sinatra.git HEAD )
+ DEBUG [c72c5fb2] 	5efb944f3ec82ca8c24294774a4cc719ae4e29fb	HEAD
+  INFO [c72c5fb2] Finished in 1.438 seconds with exit status 0 (successful).
+  INFO [d1090f8a] Running /usr/bin/env mkdir -p /var/www/cap-sinatra/shared /var/www/cap-sinatra/releases as root@178.62.89.200
+ DEBUG [d1090f8a] Command: /usr/bin/env mkdir -p /var/www/cap-sinatra/shared /var/www/cap-sinatra/releases
+  INFO [d1090f8a] Finished in 0.040 seconds with exit status 0 (successful).
+ DEBUG [e1f10737] Running [ -f /var/www/cap-sinatra/current/REVISION ] as root@178.62.89.200
+ DEBUG [e1f10737] Command: [ -f /var/www/cap-sinatra/current/REVISION ]
+ DEBUG [e1f10737] Finished in 0.074 seconds with exit status 0 (successful).
+ DEBUG [ffc0ca90] Running /usr/bin/env cat /var/www/cap-sinatra/current/REVISION 2>/dev/null as root@178.62.89.200
+ DEBUG [ffc0ca90] Command: /usr/bin/env cat /var/www/cap-sinatra/current/REVISION 2>/dev/null
+ DEBUG [ffc0ca90] 	53e9b2fa995367601a4dc22c4de2f68778f1b06d
+ DEBUG [ffc0ca90] Finished in 0.036 seconds with exit status 0 (successful).
+ DEBUG [ef9cde2f] Running [ -f /var/www/cap-sinatra/repo/HEAD ] as root@178.62.89.200
+ DEBUG [ef9cde2f] Command: [ -f /var/www/cap-sinatra/repo/HEAD ]
+ DEBUG [ef9cde2f] Finished in 0.071 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/cap-sinatra/repo
+ DEBUG [3b9a85db] Running if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [3b9a85db] Command: if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi
+ DEBUG [3b9a85db] Finished in 0.032 seconds with exit status 0 (successful).
+  INFO [78e23991] Running /usr/bin/env git remote set-url origin git@github.com:GMalzac/cap-sinatra.git as root@178.62.89.200
+ DEBUG [78e23991] Command: cd /var/www/cap-sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-e5cf995db28287ecf1cc.sh" ; /usr/bin/env git remote set-url origin git@github.com:GMalzac/cap-sinatra.git )
+  INFO [78e23991] Finished in 0.084 seconds with exit status 0 (successful).
+  INFO [14b66136] Running /usr/bin/env git remote update --prune as root@178.62.89.200
+ DEBUG [14b66136] Command: cd /var/www/cap-sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-e5cf995db28287ecf1cc.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [14b66136] 	Fetching origin
+  INFO [14b66136] Finished in 1.340 seconds with exit status 0 (successful).
+ DEBUG [987c2f87] Running if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [987c2f87] Command: if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi
+ DEBUG [987c2f87] Finished in 0.030 seconds with exit status 0 (successful).
+  INFO [b5c1e496] Running /usr/bin/env mkdir -p /var/www/cap-sinatra/releases/20210416142423 as root@178.62.89.200
+ DEBUG [b5c1e496] Command: cd /var/www/cap-sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-e5cf995db28287ecf1cc.sh" ; /usr/bin/env mkdir -p /var/www/cap-sinatra/releases/20210416142423 )
+  INFO [b5c1e496] Finished in 0.075 seconds with exit status 0 (successful).
+  INFO [498d576a] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/cap-sinatra/releases/20210416142423 as root@178.62.89.200
+ DEBUG [498d576a] Command: cd /var/www/cap-sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-e5cf995db28287ecf1cc.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/cap-sinatra/releases/20210416142423 )
+  INFO [498d576a] Finished in 0.049 seconds with exit status 0 (successful).
+ DEBUG [75b9cff6] Running if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [75b9cff6] Command: if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi
+ DEBUG [75b9cff6] Finished in 0.075 seconds with exit status 0 (successful).
+ DEBUG [dbe21315] Running /usr/bin/env git rev-list --max-count=1 master as root@178.62.89.200
+ DEBUG [dbe21315] Command: cd /var/www/cap-sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-e5cf995db28287ecf1cc.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [dbe21315] 	5efb944f3ec82ca8c24294774a4cc719ae4e29fb
+ DEBUG [dbe21315] Finished in 0.043 seconds with exit status 0 (successful).
+ DEBUG [b45c38ad] Running if test ! -d /var/www/cap-sinatra/releases/20210416142423; then echo "Directory does not exist '/var/www/cap-sinatra/releases/20210416142423'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [b45c38ad] Command: if test ! -d /var/www/cap-sinatra/releases/20210416142423; then echo "Directory does not exist '/var/www/cap-sinatra/releases/20210416142423'" 1>&2; false; fi
+ DEBUG [b45c38ad] Finished in 0.073 seconds with exit status 0 (successful).
+  INFO [a7782a12] Running /usr/bin/env echo "5efb944f3ec82ca8c24294774a4cc719ae4e29fb" > REVISION as root@178.62.89.200
+ DEBUG [a7782a12] Command: cd /var/www/cap-sinatra/releases/20210416142423 && /usr/bin/env echo "5efb944f3ec82ca8c24294774a4cc719ae4e29fb" > REVISION
+  INFO [a7782a12] Finished in 0.031 seconds with exit status 0 (successful).
+ DEBUG [049ae309] Running if test ! -d /var/www/cap-sinatra/releases/20210416142423; then echo "Directory does not exist '/var/www/cap-sinatra/releases/20210416142423'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [049ae309] Command: if test ! -d /var/www/cap-sinatra/releases/20210416142423; then echo "Directory does not exist '/var/www/cap-sinatra/releases/20210416142423'" 1>&2; false; fi
+ DEBUG [049ae309] Finished in 0.072 seconds with exit status 0 (successful).
+  INFO [59b79bf7] Running /usr/local/bin/chruby-exec ruby-2.6.6 -- bundle config --local deployment true as root@178.62.89.200
+ DEBUG [59b79bf7] Command: cd /var/www/cap-sinatra/releases/20210416142423 && /usr/local/bin/chruby-exec ruby-2.6.6 -- bundle config --local deployment true
+ DEBUG [59b79bf7] 	/bin/bash: chruby: command not found
+  INFO ---------------------------------------------------------------------------
+  INFO START 2021-04-16 15:47:55 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [de69f885] Running /usr/bin/env which passenger as root@178.62.89.200
+ DEBUG [de69f885] Command: /usr/bin/env which passenger
+ DEBUG [de69f885] 	/usr/bin/passenger
+ DEBUG [de69f885] Finished in 1.057 seconds with exit status 0 (successful).
+  INFO [ec749e30] Running /usr/bin/env mkdir -p /tmp as root@178.62.89.200
+ DEBUG [ec749e30] Command: /usr/bin/env mkdir -p /tmp
+  INFO [ec749e30] Finished in 0.044 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-9054b474fe1d1c297a0b.sh 0.0%
+  INFO Uploading /tmp/git-ssh-9054b474fe1d1c297a0b.sh 100.0%
+  INFO [c17e30c2] Running /usr/bin/env chmod 700 /tmp/git-ssh-9054b474fe1d1c297a0b.sh as root@178.62.89.200
+ DEBUG [c17e30c2] Command: /usr/bin/env chmod 700 /tmp/git-ssh-9054b474fe1d1c297a0b.sh
+  INFO [c17e30c2] Finished in 0.030 seconds with exit status 0 (successful).
+  INFO [c7f69277] Running /usr/bin/env git ls-remote git@github.com:GMalzac/cap-sinatra.git HEAD as root@178.62.89.200
+ DEBUG [c7f69277] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-9054b474fe1d1c297a0b.sh" ; /usr/bin/env git ls-remote git@github.com:GMalzac/cap-sinatra.git HEAD )
+ DEBUG [c7f69277] 	5efb944f3ec82ca8c24294774a4cc719ae4e29fb	HEAD
+  INFO [c7f69277] Finished in 1.306 seconds with exit status 0 (successful).
+  INFO [7fe08397] Running /usr/bin/env mkdir -p /var/www/cap-sinatra/shared /var/www/cap-sinatra/releases as root@178.62.89.200
+ DEBUG [7fe08397] Command: /usr/bin/env mkdir -p /var/www/cap-sinatra/shared /var/www/cap-sinatra/releases
+  INFO [7fe08397] Finished in 0.029 seconds with exit status 0 (successful).
+ DEBUG [2b60063d] Running [ -f /var/www/cap-sinatra/current/REVISION ] as root@178.62.89.200
+ DEBUG [2b60063d] Command: [ -f /var/www/cap-sinatra/current/REVISION ]
+ DEBUG [2b60063d] Finished in 0.071 seconds with exit status 0 (successful).
+ DEBUG [4f5c1d92] Running /usr/bin/env cat /var/www/cap-sinatra/current/REVISION 2>/dev/null as root@178.62.89.200
+ DEBUG [4f5c1d92] Command: /usr/bin/env cat /var/www/cap-sinatra/current/REVISION 2>/dev/null
+ DEBUG [4f5c1d92] 	53e9b2fa995367601a4dc22c4de2f68778f1b06d
+ DEBUG [4f5c1d92] Finished in 0.032 seconds with exit status 0 (successful).
+ DEBUG [6fdcf320] Running [ -f /var/www/cap-sinatra/repo/HEAD ] as root@178.62.89.200
+ DEBUG [6fdcf320] Command: [ -f /var/www/cap-sinatra/repo/HEAD ]
+ DEBUG [6fdcf320] Finished in 0.071 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/cap-sinatra/repo
+ DEBUG [5bca341f] Running if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [5bca341f] Command: if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi
+ DEBUG [5bca341f] Finished in 0.031 seconds with exit status 0 (successful).
+  INFO [3c4cc9fa] Running /usr/bin/env git remote set-url origin git@github.com:GMalzac/cap-sinatra.git as root@178.62.89.200
+ DEBUG [3c4cc9fa] Command: cd /var/www/cap-sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-9054b474fe1d1c297a0b.sh" ; /usr/bin/env git remote set-url origin git@github.com:GMalzac/cap-sinatra.git )
+  INFO [3c4cc9fa] Finished in 0.079 seconds with exit status 0 (successful).
+  INFO [aa501f2b] Running /usr/bin/env git remote update --prune as root@178.62.89.200
+ DEBUG [aa501f2b] Command: cd /var/www/cap-sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-9054b474fe1d1c297a0b.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [aa501f2b] 	Fetching origin
+  INFO [aa501f2b] Finished in 1.216 seconds with exit status 0 (successful).
+ DEBUG [cf24ef44] Running if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [cf24ef44] Command: if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi
+ DEBUG [cf24ef44] Finished in 0.038 seconds with exit status 0 (successful).
+  INFO [a46284c9] Running /usr/bin/env mkdir -p /var/www/cap-sinatra/releases/20210416144758 as root@178.62.89.200
+ DEBUG [a46284c9] Command: cd /var/www/cap-sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-9054b474fe1d1c297a0b.sh" ; /usr/bin/env mkdir -p /var/www/cap-sinatra/releases/20210416144758 )
+  INFO [a46284c9] Finished in 0.091 seconds with exit status 0 (successful).
+  INFO [8b7224b6] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/cap-sinatra/releases/20210416144758 as root@178.62.89.200
+ DEBUG [8b7224b6] Command: cd /var/www/cap-sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-9054b474fe1d1c297a0b.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/cap-sinatra/releases/20210416144758 )
+  INFO [8b7224b6] Finished in 0.062 seconds with exit status 0 (successful).
+ DEBUG [94718ff4] Running if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [94718ff4] Command: if test ! -d /var/www/cap-sinatra/repo; then echo "Directory does not exist '/var/www/cap-sinatra/repo'" 1>&2; false; fi
+ DEBUG [94718ff4] Finished in 0.076 seconds with exit status 0 (successful).
+ DEBUG [93f6f368] Running /usr/bin/env git rev-list --max-count=1 master as root@178.62.89.200
+ DEBUG [93f6f368] Command: cd /var/www/cap-sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-9054b474fe1d1c297a0b.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [93f6f368] 	5efb944f3ec82ca8c24294774a4cc719ae4e29fb
+ DEBUG [93f6f368] Finished in 0.043 seconds with exit status 0 (successful).
+ DEBUG [7dc9a856] Running if test ! -d /var/www/cap-sinatra/releases/20210416144758; then echo "Directory does not exist '/var/www/cap-sinatra/releases/20210416144758'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [7dc9a856] Command: if test ! -d /var/www/cap-sinatra/releases/20210416144758; then echo "Directory does not exist '/var/www/cap-sinatra/releases/20210416144758'" 1>&2; false; fi
+ DEBUG [7dc9a856] Finished in 0.071 seconds with exit status 0 (successful).
+  INFO [807fff69] Running /usr/bin/env echo "5efb944f3ec82ca8c24294774a4cc719ae4e29fb" > REVISION as root@178.62.89.200
+ DEBUG [807fff69] Command: cd /var/www/cap-sinatra/releases/20210416144758 && /usr/bin/env echo "5efb944f3ec82ca8c24294774a4cc719ae4e29fb" > REVISION
+  INFO [807fff69] Finished in 0.030 seconds with exit status 0 (successful).
+ DEBUG [7b19a899] Running if test ! -d /var/www/cap-sinatra/releases/20210416144758; then echo "Directory does not exist '/var/www/cap-sinatra/releases/20210416144758'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [7b19a899] Command: if test ! -d /var/www/cap-sinatra/releases/20210416144758; then echo "Directory does not exist '/var/www/cap-sinatra/releases/20210416144758'" 1>&2; false; fi
+ DEBUG [7b19a899] Finished in 0.070 seconds with exit status 0 (successful).
+  INFO [7bd2562a] Running /usr/local/bin/chruby-exec ruby-2.6.6 -- bundle config --local deployment true as root@178.62.89.200
+ DEBUG [7bd2562a] Command: cd /var/www/cap-sinatra/releases/20210416144758 && /usr/local/bin/chruby-exec ruby-2.6.6 -- bundle config --local deployment true
+ DEBUG [7bd2562a] 	You are replacing the current local value of deployment, which is currently nil
+  INFO [7bd2562a] Finished in 0.472 seconds with exit status 0 (successful).
+  INFO [028cfdc0] Running /usr/local/bin/chruby-exec ruby-2.6.6 -- bundle config --local path /var/www/cap-sinatra/shared/bundle as root@178.62.89.200
+ DEBUG [028cfdc0] Command: cd /var/www/cap-sinatra/releases/20210416144758 && /usr/local/bin/chruby-exec ruby-2.6.6 -- bundle config --local path /var/www/cap-sinatra/shared/bundle
+ DEBUG [028cfdc0] 	You are replacing the current local value of path, which is currently nil
+  INFO [028cfdc0] Finished in 0.662 seconds with exit status 0 (successful).
+  INFO [4c9f4031] Running /usr/local/bin/chruby-exec ruby-2.6.6 -- bundle config --local without development:test as root@178.62.89.200
+ DEBUG [4c9f4031] Command: cd /var/www/cap-sinatra/releases/20210416144758 && /usr/local/bin/chruby-exec ruby-2.6.6 -- bundle config --local without development:test
+ DEBUG [4c9f4031] 	You are replacing the current local value of without, which is currently nil
+  INFO [4c9f4031] Finished in 0.873 seconds with exit status 0 (successful).
+ DEBUG [36b9a9c2] Running if test ! -d /var/www/cap-sinatra/releases/20210416144758; then echo "Directory does not exist '/var/www/cap-sinatra/releases/20210416144758'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [36b9a9c2] Command: if test ! -d /var/www/cap-sinatra/releases/20210416144758; then echo "Directory does not exist '/var/www/cap-sinatra/releases/20210416144758'" 1>&2; false; fi
+ DEBUG [36b9a9c2] Finished in 0.074 seconds with exit status 0 (successful).
+ DEBUG [2b5cd66c] Running /usr/local/bin/chruby-exec ruby-2.6.6 -- bundle check as root@178.62.89.200
+ DEBUG [2b5cd66c] Command: cd /var/www/cap-sinatra/releases/20210416144758 && /usr/local/bin/chruby-exec ruby-2.6.6 -- bundle check
+ DEBUG [2b5cd66c] 	The following gems are missing
+ * rake (13.0.3)
+ * net-ssh (6.1.0)
+ * net-scp (3.0.0)
+ * sshkit (1.21.2)
+ DEBUG [2b5cd66c] 	 * airbrussh (1.4.0)
+ * bcrypt_pbkdf (1.1.0)
+ * concurrent-ruby (1.1.8)
+ DEBUG [2b5cd66c] 	 * i18n (1.8.10)
+ * capistrano (3.16.0)
+ * capistrano-bundler (2.0.1)
+ DEBUG [2b5cd66c] 	 * capistrano-chruby (0.1.2)
+ * capistrano-passenger (0.2.1)
+ * ed25519 (1.2.4)
+ DEBUG [2b5cd66c] 	 * ruby2_keywords (0.0.4)
+ * mustermann (1.1.1)
+ DEBUG [2b5cd66c] 	 * rack (2.2.3)
+ * rack-protection (2.1.0)
+ DEBUG [2b5cd66c] 	 * tilt (2.0.10)
+ * sinatra (2.1.0)
+ DEBUG [2b5cd66c] 	Install missing gems with `bundle install`
+ DEBUG [2b5cd66c] Finished in 1.096 seconds with exit status 1 (failed).
+  INFO [c1becbca] Running /usr/local/bin/chruby-exec ruby-2.6.6 -- bundle install --jobs 4 --quiet as root@178.62.89.200
+ DEBUG [c1becbca] Command: cd /var/www/cap-sinatra/releases/20210416144758 && /usr/local/bin/chruby-exec ruby-2.6.6 -- bundle install --jobs 4 --quiet
+  INFO [c1becbca] Finished in 13.515 seconds with exit status 0 (successful).
+  INFO [ea5684d0] Running /usr/bin/env ln -s /var/www/cap-sinatra/releases/20210416144758 /var/www/cap-sinatra/releases/current as root@178.62.89.200
+ DEBUG [ea5684d0] Command: /usr/bin/env ln -s /var/www/cap-sinatra/releases/20210416144758 /var/www/cap-sinatra/releases/current
+  INFO [ea5684d0] Finished in 0.038 seconds with exit status 0 (successful).
+  INFO [0d3fa287] Running /usr/bin/env mv /var/www/cap-sinatra/releases/current /var/www/cap-sinatra as root@178.62.89.200
+ DEBUG [0d3fa287] Command: /usr/bin/env mv /var/www/cap-sinatra/releases/current /var/www/cap-sinatra
+  INFO [0d3fa287] Finished in 0.083 seconds with exit status 0 (successful).
+ DEBUG [ef0f6c8d] Running /usr/bin/env pwd as root@178.62.89.200
+ DEBUG [ef0f6c8d] Command: /usr/bin/env pwd
+ DEBUG [ef0f6c8d] 	/root
+ DEBUG [ef0f6c8d] Finished in 0.041 seconds with exit status 0 (successful).
+ DEBUG [72756b4e] Running if test ! -d /root; then echo "Directory does not exist '/root'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [72756b4e] Command: if test ! -d /root; then echo "Directory does not exist '/root'" 1>&2; false; fi
+ DEBUG [72756b4e] Finished in 0.081 seconds with exit status 0 (successful).
+ DEBUG [126739e1] Running /usr/bin/env passenger -v as root@178.62.89.200
+ DEBUG [126739e1] Command: cd /root && /usr/bin/env passenger -v
+ DEBUG [126739e1] 	Phusion Passenger(R) 6.0.8
+ DEBUG [126739e1] Finished in 0.366 seconds with exit status 0 (successful).
+  INFO [0947bf26] Running /usr/bin/env passenger-config restart-app /var/www/cap-sinatra --ignore-app-not-running as root@178.62.89.200
+ DEBUG [0947bf26] Command: cd /root && /usr/bin/env passenger-config restart-app /var/www/cap-sinatra --ignore-app-not-running
+ DEBUG [0947bf26] 	There are no Phusion Passenger(R)-served applications running whose paths begin with '/var/www/cap-sinatra'.
+  INFO [0947bf26] Finished in 0.511 seconds with exit status 0 (successful).
+ DEBUG [218885d3] Running /usr/bin/env ls -x /var/www/cap-sinatra/releases as root@178.62.89.200
+ DEBUG [218885d3] Command: /usr/bin/env ls -x /var/www/cap-sinatra/releases
+ DEBUG [218885d3] 	20210415145315	20210416090229	20210416090324	20210416132634	20210416133040
+20210416133316	20210416133848	20210416134832	20210416135140	20210416135307
+20210416141229	20210416142423	20210416144758
+ DEBUG [218885d3] Finished in 0.038 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 13 deployed releases on 178.62.89.200
+ DEBUG [0fcfacb0] Running [ -d /var/www/cap-sinatra/current ] as root@178.62.89.200
+ DEBUG [0fcfacb0] Command: [ -d /var/www/cap-sinatra/current ]
+ DEBUG [0fcfacb0] Finished in 0.080 seconds with exit status 0 (successful).
+ DEBUG [b74f3ce7] Running /usr/bin/env readlink /var/www/cap-sinatra/current as root@178.62.89.200
+ DEBUG [b74f3ce7] Command: /usr/bin/env readlink /var/www/cap-sinatra/current
+ DEBUG [b74f3ce7] 	/var/www/cap-sinatra/releases/20210416144758
+ DEBUG [b74f3ce7] Finished in 0.041 seconds with exit status 0 (successful).
+  INFO [3c1d66da] Running /usr/bin/env rm -rf /var/www/cap-sinatra/releases/20210415145315 /var/www/cap-sinatra/releases/20210416090229 /var/www/cap-sinatra/releases/20210416090324 /var/www/cap-sinatra/releases/20210416132634 /var/www/cap-sinatra/releases/20210416133040 /var/www/cap-sinatra/releases/20210416133316 /var/www/cap-sinatra/releases/20210416133848 /var/www/cap-sinatra/releases/20210416134832 as root@178.62.89.200
+ DEBUG [3c1d66da] Command: /usr/bin/env rm -rf /var/www/cap-sinatra/releases/20210415145315 /var/www/cap-sinatra/releases/20210416090229 /var/www/cap-sinatra/releases/20210416090324 /var/www/cap-sinatra/releases/20210416132634 /var/www/cap-sinatra/releases/20210416133040 /var/www/cap-sinatra/releases/20210416133316 /var/www/cap-sinatra/releases/20210416133848 /var/www/cap-sinatra/releases/20210416134832
+  INFO [3c1d66da] Finished in 0.091 seconds with exit status 0 (successful).
+ DEBUG [c406d579] Running if test ! -d /var/www/cap-sinatra/releases; then echo "Directory does not exist '/var/www/cap-sinatra/releases'" 1>&2; false; fi as root@178.62.89.200
+ DEBUG [c406d579] Command: if test ! -d /var/www/cap-sinatra/releases; then echo "Directory does not exist '/var/www/cap-sinatra/releases'" 1>&2; false; fi
+ DEBUG [c406d579] Finished in 0.044 seconds with exit status 0 (successful).
+  INFO [9f814865] Running /usr/bin/env echo "Branch master (at 5efb944f3ec82ca8c24294774a4cc719ae4e29fb) deployed as release 20210416144758 by greg" >> /var/www/cap-sinatra/revisions.log as root@178.62.89.200
+ DEBUG [9f814865] Command: cd /var/www/cap-sinatra/releases && /usr/bin/env echo "Branch master (at 5efb944f3ec82ca8c24294774a4cc719ae4e29fb) deployed as release 20210416144758 by greg" >> /var/www/cap-sinatra/revisions.log
+  INFO [9f814865] Finished in 0.087 seconds with exit status 0 (successful).
