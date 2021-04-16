@@ -39,4 +39,4 @@ set :repo_url, "git@github.com:GMalzac/cap-sinatra.git"
 # set :ssh_options, verify_host_key: :secure
 
 # Set the correct version
-set :chruby_ruby, 'ruby-2.6.6'
+# set :chruby_ruby, 'ruby-2.6.6'
