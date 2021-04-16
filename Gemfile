@@ -10,7 +10,4 @@ gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
 gem 'capistrano-bundler'
 gem 'capistrano-chruby'
 gem 'capistrano-passenger'
-
-group :development do
-  gem 'capistrano'
-end
+gem 'capistrano'
