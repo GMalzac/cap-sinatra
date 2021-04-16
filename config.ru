@@ -1,3 +1,7 @@
 require_relative './app.rb'
+require_relative './app2.rb'
 
-run App
+run Rack::URLMap.new(
+  '/parent' => App,
+  '/child'   => App2
+)
