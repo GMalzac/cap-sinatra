@@ -1,6 +1,7 @@
 require 'sinatra'
+require 'shared'
 require 'json'
-require 'digest'
+
 
 class App2 < Sinatra::Base
   before do 
@@ -12,9 +13,6 @@ class App2 < Sinatra::Base
   end
   
   get '/:name' do
-    {
-      name: params[:name],
-      digest: Digest::SHA256.base64digest(params[:name])
-    }.to_json
+    Shared::Person.new(params[:name])
   end
 end
