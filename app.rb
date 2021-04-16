@@ -12,9 +12,6 @@ class App < Sinatra::Base
   end
   
   get '/:name' do
-    {
-      name: params[:name],
-      digest: Digest::SHA256.base64digest(params[:name])
-    }.to_json
+    Shared::Person.new(params[:name]).to_json
   end
 end
