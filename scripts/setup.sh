@@ -40,6 +40,7 @@ sudo apt-get install -y apt-transport-https ca-certificates
 sudo sh -c 'echo deb https://oss-binaries.phusionpassenger.com/apt/passenger focal main > /etc/apt/sources.list.d/passenger.list'
 sudo apt-get update
 sudo apt-get install -y libnginx-mod-http-passenger
+sudo apt-get install libpq-dev
 
 sudo apt-get install -y nginx
 
