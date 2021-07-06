@@ -12,3 +12,7 @@ gem 'capistrano-chruby'
 gem 'capistrano-passenger'
 gem 'capistrano'
 gem 'shared', path: './shared'
+gem 'sequel'
+gem 'pg'
+
+gem 'capistrano-secrets-yml'

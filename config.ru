@@ -1,3 +1,4 @@
+require_relative './db.rb'
 require_relative './app.rb'
 require_relative './app2.rb'
 
