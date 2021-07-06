@@ -10,6 +10,9 @@ apt-get -y update
 # `make` is needed for building stuff.
 apt-get -y install make
 
+# Needed for the postgres gem to build
+sudo apt-get install libpq-dev
+
 # Install ruby-install.
 wget -O ruby-install-0.7.0.tar.gz https://github.com/postmodern/ruby-install/archive/v0.7.0.tar.gz
 tar -xzvf ruby-install-0.7.0.tar.gz
@@ -40,7 +43,6 @@ sudo apt-get install -y apt-transport-https ca-certificates
 sudo sh -c 'echo deb https://oss-binaries.phusionpassenger.com/apt/passenger focal main > /etc/apt/sources.list.d/passenger.list'
 sudo apt-get update
 sudo apt-get install -y libnginx-mod-http-passenger
-sudo apt-get install libpq-dev
 
 sudo apt-get install -y nginx
 
