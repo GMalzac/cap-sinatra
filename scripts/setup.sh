@@ -1,18 +1,21 @@
 #!/bin/bash
 
+echo '=========================================== inside setup.sh'
 # Reset and check whassup.
 cd ~/
 ls -lh
 
+echo '=========================================== apt-get -y update'
 # Make sure everything’s up to date.
 apt-get -y update
 
-# Needed for the postgres gem to build
-sudo apt-get install libpq-dev
-
+echo '=========================================== apt-get -y install make'
 # `make` is needed for building stuff.
 apt-get -y install make
 
+echo '=========================================== sudo apt-get install libpq-dev'
+# Needed for the postgres gem to build
+sudo apt-get install libpq-dev
 
 # Install ruby-install.
 wget -O ruby-install-0.7.0.tar.gz https://github.com/postmodern/ruby-install/archive/v0.7.0.tar.gz
